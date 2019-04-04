@@ -1,0 +1,27 @@
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pwn
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: pwn
+      labels:
+        app: pwn
+    spec:
+      securityContext:
+        fsGroup: 412    # Group ID of docker group on k8s nodes.
+      containers:
+        - name: gkpown
+          image: gkpown
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: dockersock 
+              mountPath:   "/var/run/docker.sock"
+      volumes:
+      - name: dockersock 
+        hostPath:
+          path: /var/run/docker.sock
+
