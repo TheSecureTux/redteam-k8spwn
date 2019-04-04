@@ -1,8 +1,7 @@
-
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: pwn
+  name: gkpown
 spec:
   replicas: 1
   template:
@@ -15,7 +14,7 @@ spec:
         fsGroup: 412    # Group ID of docker group on k8s nodes.
       containers:
         - name: gkpown
-          image: gkpown
+          image: jordimiralles/redteam-gkpown
           imagePullPolicy: Always
           volumeMounts:
             - name: dockersock 
