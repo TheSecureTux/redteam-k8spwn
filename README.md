@@ -1,4 +1,4 @@
-This is a proof of concept aimed to demonstrate the need to implement containter inspection, network security policies, etc. in a Kubernetes cluster. Also a reminder to always review carefully what a docker container or kubernetes deployment /helm chart.
+This is a proof of concept aimed to demonstrate the need to implement containter inspection, network security policies, etc. in a Kubernetes cluster. Also a reminder to always review carefully what a docker container or kubernetes deployment /helm chart is actually installing in our cluster. The few lines of code to bring up the reverse shell could be really easily mixed inbetween legitimate charts and deployments so only careful inspection would make them apparent.
 
 This deployment launches a docker container available in docker hub as below:
 
