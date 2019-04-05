@@ -8,7 +8,7 @@ Whem the docker container starts it sends a reverse shell with socat to the spec
 
         socat file:`tty`,raw,echo=0 tcp-listen:9532
 
-At this point we have direct access to the docker. The fun part of the deal though is that the deployment also assigned the container the same group id as the kubernetes noes, like this:
+At this point we have direct access to the docker. The fun part of the deal though is that the deployment also assigned the container the same group id as the kubernetes nodes, like this:
 
         spec:
           securityContext:
