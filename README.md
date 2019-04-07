@@ -51,3 +51,7 @@ So we should have access to all the node context.You can check it very easily:
     tmpfs                     6.4G         0      6.4G   0% /proc/kcore
     tmpfs                     6.4G         0      6.4G   0% /proc/timer_list
     tmpfs                     6.4G         0      6.4G   0% /sys/firmware
+
+How to use this:
+
+change the XX's in ./gkpow/socat-shell.sh for your own listener IP, build the container (docker build ), change the target image in deployment.yaml so it points to your own image and apply the deployment in the cluster (kubectl apply -f deployment.yaml)
