@@ -4,7 +4,7 @@ This deployment launches a docker container available in docker hub as below:
 
     docker pull jordimiralles/redteam-gkpown:latest
 
-Whem the docker container starts it sends a reverse shell with socat to the specified addres and port. If your destination server is listening for that connection, like this, for example: 
+When the docker container starts it sends a reverse shell with socat to the specified addres and port. If your destination server is listening for that connection, like this, for example: 
 
         socat file:`tty`,raw,echo=0 tcp-listen:9532
 
