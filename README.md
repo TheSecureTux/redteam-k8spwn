@@ -11,7 +11,7 @@ At this point we have direct access to the docker. The fun part of the deal thou
             fsGroup: 412    # Group ID of docker group on k8s nodes.
           containers:
             - name: gkpown
-              image: jordimiralles/redteam-gkpown
+              image: [repo]/redteam-gkpown
               imagePullPolicy: Always
               volumeMounts:
                 - name: dockersock 
